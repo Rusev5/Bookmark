@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Bookmark</string>
+
+    <string name="open_browser">打开浏览器</string>
+</resources>
