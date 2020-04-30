@@ -11,20 +11,16 @@ import com.github.irvingryan.VerifyCodeView;
 import com.lxf.bookmark.R;
 import com.lxf.bookmark.window.main.MainActivity;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
 public class VerificationActivity extends AppCompatActivity {
     private static final String CODE = "3336";
-    @BindView(R.id.vcv_vc)
     VerifyCodeView vcvVc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verification);
-        ButterKnife.bind(this);
-
+        vcvVc=findViewById(R.id.vcv_vc);
         initListener();
     }
 

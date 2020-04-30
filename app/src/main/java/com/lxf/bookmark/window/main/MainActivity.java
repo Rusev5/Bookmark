@@ -2,54 +2,68 @@ package com.lxf.bookmark.window.main;
 
 import android.graphics.Canvas;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Switch;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.chad.library.adapter.base.BaseViewHolder;
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.callback.ItemDragAndSwipeCallback;
 import com.chad.library.adapter.base.listener.OnItemSwipeListener;
 import com.lxf.bookmark.R;
+import com.lxf.bookmark.databinding.ActivityMainBinding;
+import com.lxf.bookmark.widget.PopupWindows;
 import com.lxf.bookmark.window.main.adapter.UrlAdapter;
 import com.lxf.bookmark.window.main.model.Url;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
 public class MainActivity extends AppCompatActivity {
 
-    @BindView(R.id.rv_main)
-    RecyclerView rvMain;
     private UrlAdapter urlAdapter;
-
+    private PopupWindows popupWindows;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
-        urlAdapter=new UrlAdapter(R.layout.item_url,null);
+        ActivityMainBinding activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        activityMainBinding.setHandlers(new MyHandlers());
 
-        ItemDragAndSwipeCallback mItemDragAndSwipeCallback =
-                new ItemDragAndSwipeCallback(urlAdapter);
+        initPageView();
+        initViewListener();
+    }
+
+    private void initPageView(){
+        RecyclerView rvMain=findViewById(R.id.rv_main);
+        urlAdapter = new UrlAdapter(R.layout.item_url, null);
+
+        ItemDragAndSwipeCallback mItemDragAndSwipeCallback = new ItemDragAndSwipeCallback(urlAdapter);
         mItemDragAndSwipeCallback.setSwipeMoveFlags(ItemTouchHelper.END);
         ItemTouchHelper mItemTouchHelper = new ItemTouchHelper(mItemDragAndSwipeCallback);
         mItemTouchHelper.attachToRecyclerView(rvMain);
 
+        rvMain.setLayoutManager(new LinearLayoutManager(this));
+        rvMain.setAdapter(urlAdapter);
+        urlAdapter.setNewData(setData());
+        popupWindows= new PopupWindows(this);
+        popupWindows.setAdjustInputMethod(true);
+    }
+
+    public void initViewListener(){
         OnItemSwipeListener onItemSwipeListener = new OnItemSwipeListener() {
             @Override
             public void onItemSwipeStart(RecyclerView.ViewHolder viewHolder, int pos) {
-                BaseViewHolder holder = ((BaseViewHolder) viewHolder);
+//                BaseViewHolder holder = ((BaseViewHolder) viewHolder);
             }
 
             @Override
             public void clearView(RecyclerView.ViewHolder viewHolder, int pos) {
-                BaseViewHolder holder = ((BaseViewHolder) viewHolder);
+//                BaseViewHolder holder = ((BaseViewHolder) viewHolder);
             }
 
             @Override
@@ -62,14 +76,15 @@ public class MainActivity extends AppCompatActivity {
                 canvas.drawColor(ContextCompat.getColor(MainActivity.this, R.color.colorPrimaryDark));
             }
         };
-
         urlAdapter.setOnItemSwipeListener(onItemSwipeListener);
-
-        rvMain.setLayoutManager(new LinearLayoutManager(this));
-        rvMain.setAdapter(urlAdapter);
-        urlAdapter.enableSwipeItem();
-
-        urlAdapter.setNewData(setData());
+        urlAdapter.setOnItemLongClickListener(new BaseQuickAdapter.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(BaseQuickAdapter adapter, View view, int position) {
+                    popupWindows.setAdjustInputMethod(true);
+                    popupWindows.showPopupWindow(R.id.rv_main);
+                return false;
+            }
+        });
     }
 
     public List<Url> setData(){
@@ -83,4 +98,14 @@ public class MainActivity extends AppCompatActivity {
         }
         return urls;
     }
+
+        public class MyHandlers {
+            public void openEditModelOnClick(View view) {
+                if ((((Switch)view)).isChecked()) {
+                    urlAdapter.enableSwipeItem();
+                } else {
+                    urlAdapter.disableSwipeItem();
+                }
+            }
+        }
 }

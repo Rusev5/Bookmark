@@ -1,4 +1,4 @@
 <ripple xmlns:android="http://schemas.android.com/apk/res/android"
-    android:color="@color/ripprleColor"
+    android:color="@color/ripprleDarkColor"
     android:radius="20dp">
 </ripple>
