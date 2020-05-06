@@ -9,4 +9,8 @@
     <string name="certain">确定</string>
     <string name="name">名称</string>
     <string name="url">链接</string>
+    <string name="input_initial_password">请输入初始密码</string>
+    <string name="input_new_password">请输入新密码</string>
+    <string name="input_secondary_new_password">请二次输入新密码</string>
+    <string name="code_confirm_error">两次密码输入不一致!\n请重新输入</string>
 </resources>

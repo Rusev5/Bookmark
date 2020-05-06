@@ -28,4 +28,13 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.85" />
 
+    <TextView
+        android:id="@+id/tv_vrfct_tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vcv_vc" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

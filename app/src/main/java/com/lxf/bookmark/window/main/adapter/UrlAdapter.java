@@ -15,6 +15,8 @@ public class UrlAdapter extends BaseItemDraggableAdapter<Url, BaseViewHolder> {
 
     @Override
     protected void convert(BaseViewHolder baseViewHolder, Url data) {
+        baseViewHolder.addOnClickListener(R.id.btn_main_it_go);
+
         baseViewHolder.itemView.setTag(data);
         baseViewHolder.itemView.findViewById(R.id.btn_main_it_go).setTag(data.getUrl());
         baseViewHolder.setText(R.id.textView, data.getName());
