@@ -23,7 +23,7 @@ public abstract class AppDatabase extends RoomDatabase {
             synchronized (AppDatabase.class) {
                 if (INSTANCE == null) {
                     INSTANCE = Room.databaseBuilder(Bookmark.getAppInstance(),
-                            AppDatabase.class, "bookmark.db")
+                            AppDatabase.class, "bookmark")
                             .addCallback(new RoomDatabase.Callback() {
                                 @Override
                                 public void onCreate(@NonNull SupportSQLiteDatabase db) {

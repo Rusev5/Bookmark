@@ -1,7 +1,5 @@
 package com.lxf.bookmark.window.main.adapter;
 
-import android.view.View;
-
 import com.chad.library.adapter.base.BaseItemDraggableAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.lxf.bookmark.R;
@@ -17,7 +15,7 @@ public class UrlAdapter extends BaseItemDraggableAdapter<Url, BaseViewHolder> {
 
     @Override
     protected void convert(BaseViewHolder baseViewHolder, Url data) {
-
+        baseViewHolder.itemView.setTag(data);
         baseViewHolder.itemView.findViewById(R.id.btn_main_it_go).setTag(data.getUrl());
         baseViewHolder.setText(R.id.textView, data.getName());
         baseViewHolder.setText(R.id.textView2, data.getUrl());

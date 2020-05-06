@@ -49,10 +49,10 @@
                 app:srcCompat="@drawable/ic_setting" />
 
             <Switch
-                android:id="@+id/switch1"
+                android:id="@+id/swch_main_edit"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/button_height"
-                android:text="@string/open_edit"
+                android:text="@string/edit"
                 android:textColor="@color/textDarkColor"
                 android:textSize="@dimen/title_three_text_size"
                 android:onClick="@{(view)->handlers.openEditModelOnClick(view)}"
@@ -67,7 +67,7 @@
                 android:background="?android:attr/listDivider"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/guideline"
-                app:layout_constraintTop_toBottomOf="@+id/switch1" />
+                app:layout_constraintTop_toBottomOf="@+id/swch_main_edit" />
 
             <Button
                 android:id="@+id/button"
@@ -97,6 +97,26 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/guideline"
                 app:layout_constraintTop_toBottomOf="@+id/button" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabtn_main_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="@{()->handlers.addAItem()}"
+                app:layout_constraintBottom_toTopOf="@+id/guideline6"
+                app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                app:srcCompat="@drawable/ic_add" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintGuide_percent="0.92"
+                app:layout_constraintStart_toStartOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

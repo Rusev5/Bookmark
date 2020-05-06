@@ -18,4 +18,24 @@ public class PopupWindows extends BasePopupWindow {
         return createPopupById(R.layout.layout_add_url);
     }
 
+//    @Override
+//    protected Animator onCreateShowAnimator() {
+//        return createAnimator(true);
+//    }
+//
+//    @Override
+//    protected Animator onCreateDismissAnimator() {
+//        return createAnimator(false);
+//    }
+
+//    private Animator createAnimator(boolean isShow) {
+//        ObjectAnimator showAnimator = ObjectAnimator.ofFloat(getDisplayAnimateView(),
+//                View.TRANSLATION_Y,
+//                isShow ? getHeight() * 0.75f : 0,
+//                isShow ? 0 : getHeight() * 0.75f);
+//        showAnimator.setDuration(1000);
+//        showAnimator.setInterpolator(new OvershootInterpolator(isShow ? 3 : -3));
+//        return showAnimator;
+//    }
+
 }

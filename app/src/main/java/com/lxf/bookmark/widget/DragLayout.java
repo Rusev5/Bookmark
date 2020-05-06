@@ -1,7 +1,7 @@
 package com.lxf.bookmark.widget;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
-import android.os.Build;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -9,7 +9,6 @@ import android.widget.FrameLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
 import androidx.customview.widget.ViewDragHelper;
 
 public class DragLayout extends FrameLayout {
@@ -35,12 +34,6 @@ public class DragLayout extends FrameLayout {
         init();
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-    public DragLayout(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
-        init();
-    }
-
 
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
@@ -61,6 +54,7 @@ public class DragLayout extends FrameLayout {
         return mDragHelper.shouldInterceptTouchEvent(ev);
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         mDragHelper.processTouchEvent(event);
@@ -132,12 +126,12 @@ public class DragLayout extends FrameLayout {
             }
 
             @Override
-            public int getViewHorizontalDragRange(View child) {
+            public int getViewHorizontalDragRange(@NonNull View child) {
                 return 1;
             }
 
             @Override
-            public int getViewVerticalDragRange(View child) {
+            public int getViewVerticalDragRange(@NonNull View child) {
                 return getMeasuredHeight() - child.getMeasuredHeight();
             }
         });

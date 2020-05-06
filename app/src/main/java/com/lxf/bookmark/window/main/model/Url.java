@@ -9,13 +9,18 @@ public class Url {
 
     @PrimaryKey(autoGenerate = true) // 设置主键
     @ColumnInfo
-    public int id;
+    protected int id;
 
     @ColumnInfo
-    public String name;
+    private String name;
 
     @ColumnInfo
-    public String url;
+    private String url;
+
+    public Url(String name, String url) {
+        this.name = name;
+        this.url = url;
+    }
 
     public int getId() {
         return id;
@@ -27,5 +32,13 @@ public class Url {
 
     public String getUrl() {
         return url;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }

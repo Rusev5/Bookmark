@@ -1,39 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="190dp"
-    app:cardCornerRadius="@dimen/card_view_radius">
+    android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimaryDark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="0.6:1"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toTopOf="parent">
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btn_main_commit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="32dp"
+            android:background="?selectableItemBackgroundBorderless"
+            android:text="@string/certain"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <EditText
+            android:id="@+id/edt_main_url_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="@color/colorAccent"
-            android:text="@string/add"
-            android:textColor="@color/textDarkColor"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp"
+            android:background="@null"
+            android:ems="10"
+            android:hint="@string/name"
+            android:importantForAutofill="no"
+            android:textSize="@dimen/content_text_size"
+            app:layout_constraintBottom_toTopOf="@+id/edt_main_url"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="409dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toTopOf="@+id/button2"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            android:inputType="text"
+            tools:ignore="TextFields" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="hint" />
-        </com.google.android.material.textfield.TextInputLayout>
+        <EditText
+            android:id="@+id/edt_main_url"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@null"
+            android:ems="10"
+            android:hint="@string/url"
+            android:importantForAutofill="no"
+            android:inputType="textUri"
+            android:textSize="@dimen/content_text_size"
+            app:layout_constraintBottom_toTopOf="@+id/btn_main_commit"
+            app:layout_constraintEnd_toEndOf="@+id/edt_main_url_name"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/edt_main_url_name"
+            app:layout_constraintTop_toBottomOf="@+id/edt_main_url_name" />
 
+        <View
+            android:id="@+id/divider4"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/divider_height"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintEnd_toEndOf="@+id/edt_main_url_name"
+            app:layout_constraintStart_toStartOf="@+id/edt_main_url_name"
+            app:layout_constraintTop_toBottomOf="@+id/edt_main_url_name" />
+
+        <View
+            android:id="@+id/divider5"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/divider_height"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintEnd_toEndOf="@+id/edt_main_url"
+            app:layout_constraintStart_toStartOf="@+id/edt_main_url"
+            app:layout_constraintTop_toBottomOf="@+id/edt_main_url" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.cardview.widget.CardView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.08"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.93" />
+</androidx.constraintlayout.widget.ConstraintLayout>
