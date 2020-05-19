@@ -8,6 +8,7 @@ import android.widget.Toast;
 public class Bookmark extends Application {
     private static Context AppInstance;
     private static SharedPreferences userSharedPreferences;
+
     public static Context getAppInstance() {
         return AppInstance;
     }
@@ -19,7 +20,7 @@ public class Bookmark extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        AppInstance=getApplicationContext();
+        AppInstance = getApplicationContext();
         userSharedPreferences = getSharedPreferences("bookmark_setting", MODE_PRIVATE);
     }
 

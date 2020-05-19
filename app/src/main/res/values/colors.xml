@@ -16,7 +16,11 @@
     <!-- 输入框下划线颜色 -->
     <color name="textUnderLineNormalColor">@color/white</color>
     <color name="textUnderLineActivatedColor">@color/turquoise</color>
-
+    <!-- popupWindows背景颜色 -->
+    <color name="popupWindowsBackgroundColor">@color/white</color>
+    <!--Button字体颜色 -->
+    <color name="okButton">@color/iconblue</color>
+    <color name="cancelButton">@color/iconred</color>
     <!-- —————————————————————————————————————————————————————————— -->
     <color name="black">#FF000000</color><!--黑色 -->
     <color name="white">#FFFFFFFF</color><!--白色-->

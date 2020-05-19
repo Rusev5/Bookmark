@@ -60,7 +60,9 @@ public class VerificationActivity extends AppCompatActivity {
                             editor.apply();
                             finish();
                         } else {
-                            Toast.makeText(this, "" + getResources().getString((R.string.code_confirm_error)), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(this,
+                                    "" + getResources().getString((R.string.code_confirm_error)),
+                                    Toast.LENGTH_SHORT).show();
                             tvTip.setText(R.string.input_new_password);
                             firstInputNewCode = null;
                             initCodeInputView();
