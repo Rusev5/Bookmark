@@ -1,12 +1,17 @@
 <resources>
-    <string name="app_name">Bookmark</string>
+    <string name="app_name">标签</string>
 
     <string name="open_browser">打开浏览器</string>
-    <string name="open_edit">编辑</string>
+    <string name="edit">编辑</string>
     <string name="edit_password">修改密码</string>
     <string name="setting">设置</string>
     <string name="add">添加</string>
-    <string name="url">地址</string>
-    <string name="url_name">名称</string>
-    <string name="done">完成</string>
+    <string name="certain">确定</string>
+    <string name="name">名称</string>
+    <string name="url">链接</string>
+    <string name="no_more_data">暂无数据...</string>
+    <string name="input_initial_password">请输入初始密码</string>
+    <string name="input_new_password">请输入新密码</string>
+    <string name="input_secondary_new_password">请二次输入新密码</string>
+    <string name="code_confirm_error">两次密码输入不一致!\n请重新输入</string>
 </resources>

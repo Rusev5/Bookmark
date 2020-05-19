@@ -19,16 +19,16 @@ public class MainViewModel extends ViewModel {
         return repository.listLiveData;
     }
 
-    void insertWord(Url... words) {
-        repository.insertWord(words);
+    void insertWord(Url... url) {
+        repository.insertWord(url);
     }
 
-    void updateWord(Url... words) {
-        repository.updateWord(words);
+    void updateWord(Url... url) {
+        repository.updateWord(url);
     }
 
-    void deleteWord(Url... words) {
-        repository.deleteWord(words);
+    void deleteWord(Url... url) {
+        repository.deleteWord(url);
     }
 
     void deleteAllWord() {

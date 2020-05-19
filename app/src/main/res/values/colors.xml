@@ -156,4 +156,9 @@
     <color name="palevioletred">#FFdb7093</color><!--苍紫罗兰色 -->
     <color name="darkviolet">#FF9400d3</color><!--暗紫罗兰色 -->
     <color name="mediumorchid">#FFba55d3</color><!--中粉紫色 -->
+    <color name="iconblue">#2196F3</color>
+    <color name="icongree">#26A69A</color>
+    <color name="iconltgree">#8BC34A</color>
+    <color name="iconyeelow">#FFC107</color>
+    <color name="iconred">#F44336</color>
 </resources>
