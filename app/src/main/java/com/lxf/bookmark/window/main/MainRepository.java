@@ -10,14 +10,14 @@ import com.lxf.bookmark.window.main.model.UrlDao;
 
 import java.util.List;
 
-public class MainRepository {
+class MainRepository {
     private UrlDao urlDao;
     LiveData<List<Url>> listLiveData;
 
-    public MainRepository() {
-        AppDatabase appDatabase=AppDatabase.getInstance();
-        urlDao=appDatabase.getUrlDao();
-        listLiveData=urlDao.getAllUrl();
+    MainRepository() {
+        AppDatabase appDatabase = AppDatabase.getInstance();
+        urlDao = appDatabase.getUrlDao();
+        listLiveData = urlDao.getAllUrl();
     }
 
     void insertWord(Url... url) {

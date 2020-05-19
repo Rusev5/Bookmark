@@ -13,6 +13,10 @@
     <!-- 点击水纹颜色 -->
     <color name="ripprleLightColor">@color/lightgrey</color>
     <color name="ripprleDarkColor">@color/darkslategrey</color>
+    <!-- 输入框下划线颜色 -->
+    <color name="textUnderLineNormalColor">@color/white</color>
+    <color name="textUnderLineActivatedColor">@color/turquoise</color>
+
     <!-- —————————————————————————————————————————————————————————— -->
     <color name="black">#FF000000</color><!--黑色 -->
     <color name="white">#FFFFFFFF</color><!--白色-->

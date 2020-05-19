@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.callback.ItemDragAndSwipeCallback;
 import com.chad.library.adapter.base.listener.OnItemSwipeListener;
 import com.lxf.bookmark.R;
@@ -28,21 +27,24 @@ public class MainActivity extends AppCompatActivity {
 
     private UrlAdapter urlAdapter;
     private PopupWindows popupWindows;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ActivityMainBinding activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        ActivityMainBinding activityMainBinding = DataBindingUtil.setContentView(this,
+                R.layout.activity_main);
         activityMainBinding.setHandlers(new MyHandlers());
 
         initPageView();
         initViewListener();
     }
 
-    private void initPageView(){
-        RecyclerView rvMain=findViewById(R.id.rv_main);
+    private void initPageView() {
+        RecyclerView rvMain = findViewById(R.id.rv_main);
         urlAdapter = new UrlAdapter(R.layout.item_url, null);
 
-        ItemDragAndSwipeCallback mItemDragAndSwipeCallback = new ItemDragAndSwipeCallback(urlAdapter);
+        ItemDragAndSwipeCallback mItemDragAndSwipeCallback =
+                new ItemDragAndSwipeCallback(urlAdapter);
         mItemDragAndSwipeCallback.setSwipeMoveFlags(ItemTouchHelper.END);
         ItemTouchHelper mItemTouchHelper = new ItemTouchHelper(mItemDragAndSwipeCallback);
         mItemTouchHelper.attachToRecyclerView(rvMain);
@@ -50,11 +52,11 @@ public class MainActivity extends AppCompatActivity {
         rvMain.setLayoutManager(new LinearLayoutManager(this));
         rvMain.setAdapter(urlAdapter);
         urlAdapter.setNewData(setData());
-        popupWindows= new PopupWindows(this);
+        popupWindows = new PopupWindows(this);
         popupWindows.setAdjustInputMethod(true);
     }
 
-    public void initViewListener(){
+    public void initViewListener() {
         OnItemSwipeListener onItemSwipeListener = new OnItemSwipeListener() {
             @Override
             public void onItemSwipeStart(RecyclerView.ViewHolder viewHolder, int pos) {
@@ -73,39 +75,37 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemSwipeMoving(Canvas canvas, RecyclerView.ViewHolder viewHolder,
                                           float dX, float dY, boolean isCurrentlyActive) {
-                canvas.drawColor(ContextCompat.getColor(MainActivity.this, R.color.colorPrimaryDark));
+                canvas.drawColor(ContextCompat.getColor(MainActivity.this,
+                        R.color.colorPrimaryDark));
             }
         };
         urlAdapter.setOnItemSwipeListener(onItemSwipeListener);
-        urlAdapter.setOnItemLongClickListener(new BaseQuickAdapter.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(BaseQuickAdapter adapter, View view, int position) {
-                    popupWindows.setAdjustInputMethod(true);
-                    popupWindows.showPopupWindow(R.id.rv_main);
-                return false;
-            }
+        urlAdapter.setOnItemLongClickListener((adapter, view, position) -> {
+            popupWindows.setAdjustInputMethod(true);
+            popupWindows.showPopupWindow(R.id.rv_main);
+            return false;
         });
     }
 
-    public List<Url> setData(){
-        List<Url> urls=new ArrayList<>();
-        int count=20;
-        for(int i=0;i<count;i++){
-            Url url=new Url();
-            url.name="shit";
-            url.url="sadfsa";
+    public List<Url> setData() {
+        List<Url> urls = new ArrayList<>();
+        int count = 20;
+        for (int i = 0; i < count; i++) {
+            Url url = new Url();
+            url.name = "shit";
+            url.url = "sadfsa";
             urls.add(url);
         }
         return urls;
     }
 
-        public class MyHandlers {
-            public void openEditModelOnClick(View view) {
-                if ((((Switch)view)).isChecked()) {
-                    urlAdapter.enableSwipeItem();
-                } else {
-                    urlAdapter.disableSwipeItem();
-                }
+    public class MyHandlers {
+        public void openEditModelOnClick(View view) {
+            if ((((Switch) view)).isChecked()) {
+                urlAdapter.enableSwipeItem();
+            } else {
+                urlAdapter.disableSwipeItem();
             }
         }
+    }
 }

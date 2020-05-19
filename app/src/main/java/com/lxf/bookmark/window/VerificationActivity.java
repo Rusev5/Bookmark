@@ -25,22 +25,14 @@ public class VerificationActivity extends AppCompatActivity {
     }
 
     private void initListener() {
-        vcvVc.setListener(new VerifyCodeView.OnTextChangListener() {
-            @Override
-            public void afterTextChanged(String text) {
-                if (text.length() == 4) {
-                    if (text.equals(CODE)) {
-                        Intent intent=new Intent(VerificationActivity.this, MainActivity.class);
-                        startActivity(intent);
-                    } else {
-                        Toast.makeText(VerificationActivity.this, "╯3╰", Toast.LENGTH_SHORT).show();
-                        new Handler().postDelayed(new Runnable() {
-                            @Override
-                            public void run() {
-                                vcvVc.setText("");
-                            }
-                        }, 800);
-                    }
+        vcvVc.setListener(text -> {
+            if (text.length() == 4) {
+                if (text.equals(CODE)) {
+                    Intent intent=new Intent(VerificationActivity.this, MainActivity.class);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(VerificationActivity.this, "╯3╰", Toast.LENGTH_SHORT).show();
+                    new Handler().postDelayed(() -> vcvVc.setText(""), 800);
                 }
             }
         });

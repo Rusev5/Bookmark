@@ -6,4 +6,7 @@
     <string name="edit_password">修改密码</string>
     <string name="setting">设置</string>
     <string name="add">添加</string>
+    <string name="url">地址</string>
+    <string name="url_name">名称</string>
+    <string name="done">完成</string>
 </resources>

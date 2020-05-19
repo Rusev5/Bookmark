@@ -8,4 +8,11 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+
+    <style name="WindowsOfMainTheme" parent="AppTheme">
+        <item name="android:textColorHint">@color/textDarkColor</item>
+        <item name="colorControlNormal">@color/textUnderLineNormalColor</item>
+        <item name="colorControlActivated">@color/textUnderLineActivatedColor</item>
+    </style>
+
 </resources>
