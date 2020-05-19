@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Bookmark</string>
+    <string name="app_name">标签</string>
 
     <string name="open_browser">打开浏览器</string>
     <string name="edit">编辑</string>
@@ -9,6 +9,7 @@
     <string name="certain">确定</string>
     <string name="name">名称</string>
     <string name="url">链接</string>
+    <string name="no_more_data">暂无数据...</string>
     <string name="input_initial_password">请输入初始密码</string>
     <string name="input_new_password">请输入新密码</string>
     <string name="input_secondary_new_password">请二次输入新密码</string>

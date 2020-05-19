@@ -4,12 +4,14 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.github.irvingryan.VerifyCodeView;
+import com.gyf.immersionbar.ImmersionBar;
 import com.lxf.bookmark.Bookmark;
 import com.lxf.bookmark.R;
 import com.lxf.bookmark.window.main.MainActivity;
@@ -28,9 +30,12 @@ public class VerificationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verification);
+        ImmersionBar.with(this).init();
+
         vcvVc = findViewById(R.id.vcv_vc);
         tvTip = findViewById(R.id.tv_vrfct_tip);
-
+        LinearLayout llStatusBar = findViewById(R.id.ll_status_bar);
+        llStatusBar.setMinimumHeight(ImmersionBar.getStatusBarHeight(this));
         code = Bookmark.getUserSharedPreferences().getString("code", "0000");
 
         initListener();
