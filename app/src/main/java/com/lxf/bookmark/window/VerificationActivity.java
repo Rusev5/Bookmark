@@ -16,7 +16,6 @@ import com.lxf.bookmark.Bookmark;
 import com.lxf.bookmark.R;
 import com.lxf.bookmark.window.main.MainActivity;
 
-
 public class VerificationActivity extends AppCompatActivity {
     private String code;
     private SharedPreferences.Editor editor;

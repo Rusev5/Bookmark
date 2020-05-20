@@ -76,7 +76,31 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_setting">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="#BB000000"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"></LinearLayout>
+
+                <ImageButton
+                    android:id="@+id/imageButton2"
+                    android:layout_width="0dp"
+                    android:layout_height="?attr/actionBarSize"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/bg_ripple_dark"
+                    android:contentDescription="@string/setting"
+                    android:onClick="@{()->handlers.addAItem()}"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageButton"
+                    app:layout_constraintEnd_toStartOf="@+id/imageButton"
+                    app:layout_constraintTop_toTopOf="@+id/imageButton"
+                    app:srcCompat="@drawable/ic_add" />
 
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/guideline3"
@@ -96,7 +120,7 @@
                     android:id="@+id/imageButton"
                     android:layout_width="wrap_content"
                     android:layout_height="?attr/actionBarSize"
-                    android:background="@drawable/bg_ripple_light"
+                    android:background="@drawable/bg_ripple_dark"
                     android:contentDescription="@string/setting"
                     app:layout_constraintEnd_toStartOf="@+id/guideline3"
                     app:layout_constraintTop_toTopOf="parent"
@@ -108,7 +132,7 @@
                     android:layout_height="@dimen/button_height"
                     android:onClick="@{(view)->handlers.openEditModelOnClick(view)}"
                     android:text="@string/edit"
-                    android:textColor="@color/textLightColor"
+                    android:textColor="@color/textDarkColor"
                     android:textSize="@dimen/title_three_text_size"
                     app:layout_constraintEnd_toStartOf="@+id/guideline3"
                     app:layout_constraintStart_toStartOf="@+id/guideline"
@@ -138,7 +162,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/edit_password"
-                    android:textColor="@color/textLightColor"
+                    android:textColor="@color/textDarkColor"
                     android:textSize="@dimen/title_three_text_size"
                     app:layout_constraintBottom_toBottomOf="@+id/button"
                     app:layout_constraintStart_toStartOf="@+id/guideline"
@@ -152,17 +176,6 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/guideline"
                     app:layout_constraintTop_toBottomOf="@+id/button" />
-
-                <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/fabtn_main_add"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:onClick="@{()->handlers.addAItem()}"
-                    app:layout_constraintBottom_toTopOf="@+id/guideline6"
-                    app:layout_constraintEnd_toStartOf="@+id/guideline3"
-                    app:srcCompat="@drawable/ic_add" />
 
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/guideline6"

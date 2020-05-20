@@ -6,7 +6,7 @@
     <!-- —————————————————————————————————————————————————————————— -->
     <!-- 字体颜色 -->
     <color name="textLightColor">@color/grey</color>
-    <color name="textDarkColor">@color/white</color>
+    <color name="textDarkColor">@color/lightgrey</color>
     <!-- 图标颜色 -->
     <color name="iconLightColor">@color/lightgrey</color>
     <color name="iconDarkColor">@color/white</color>
