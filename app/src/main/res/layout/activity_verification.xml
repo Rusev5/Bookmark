@@ -6,51 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".window.VerificationActivity">
 
-    <LinearLayout
-        android:id="@+id/ll_status_bar"
+    <ImageView
+        android:id="@+id/img_main"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:baselineAligned="false"
-        android:orientation="horizontal"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/iconblue"
-            android:orientation="vertical" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/icongree"
-            android:orientation="vertical" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/iconltgree"
-            android:orientation="vertical" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/iconyeelow"
-            android:orientation="vertical" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/iconred"
-            android:orientation="vertical" />
-    </LinearLayout>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        android:contentDescription="@string/background" />
 
     <com.github.irvingryan.VerifyCodeView
         android:id="@+id/vcv_vc"
@@ -62,9 +28,9 @@
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ll_status_bar"
+        app:layout_constraintTop_toTopOf="@+id/img_main"
         app:vcLineStyle="noLine"
-        app:vcTextColor="@color/textLightColor" />
+        app:vcTextColor="@color/textDarkColor" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"

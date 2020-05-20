@@ -12,6 +12,8 @@ android {
         versionName version_name
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        renderscriptTargetApi 19
+        renderscriptSupportModeEnabled true
     }
 
     buildTypes {
@@ -30,7 +32,7 @@ android {
         enabled = true
     }
 
-   viewBinding {
+    viewBinding {
         enabled = true
     }
 
@@ -77,4 +79,8 @@ dependencies {
     implementation "com.gyf.immersionbar:immersionbar-components:$immersion_bar"
     // ImmersionBar for kotlin
     implementation "com.gyf.immersionbar:immersionbar-ktx:$immersion_bar"
+
+    //GaussianBlur
+    implementation "com.github.jrvansuita:GaussianBlur:$gaussian_blur"
+
 }

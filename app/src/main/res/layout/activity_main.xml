@@ -62,12 +62,13 @@
         <com.lxf.bookmark.widget.DragLayout
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:descendantFocusability="blocksDescendants"
+            android:focusableInTouchMode="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ll_status_bar"
             tools:context=".window.main.MainActivity">
-
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_main"
@@ -76,30 +77,18 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/bg_setting">
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:background="#BB000000"
-                    android:orientation="vertical"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"></LinearLayout>
+                android:layout_height="match_parent">
 
                 <ImageButton
-                    android:id="@+id/imageButton2"
+                    android:id="@+id/imageButton"
                     android:layout_width="0dp"
                     android:layout_height="?attr/actionBarSize"
-                    android:layout_marginEnd="16dp"
+                    android:layout_marginEnd="8dp"
                     android:background="@drawable/bg_ripple_dark"
                     android:contentDescription="@string/setting"
                     android:onClick="@{()->handlers.addAItem()}"
-                    app:layout_constraintBottom_toBottomOf="@+id/imageButton"
-                    app:layout_constraintEnd_toStartOf="@+id/imageButton"
-                    app:layout_constraintTop_toTopOf="@+id/imageButton"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                    app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/ic_add" />
 
                 <androidx.constraintlayout.widget.Guideline
@@ -116,24 +105,14 @@
                     android:orientation="vertical"
                     app:layout_constraintGuide_percent="0.04" />
 
-                <ImageButton
-                    android:id="@+id/imageButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="?attr/actionBarSize"
-                    android:background="@drawable/bg_ripple_dark"
-                    android:contentDescription="@string/setting"
-                    app:layout_constraintEnd_toStartOf="@+id/guideline3"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/ic_setting" />
-
                 <Switch
                     android:id="@+id/swch_main_edit"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/button_height"
                     android:onClick="@{(view)->handlers.openEditModelOnClick(view)}"
                     android:text="@string/edit"
-                    android:textColor="@color/textDarkColor"
                     android:textSize="@dimen/title_three_text_size"
+                    android:textColor="@color/textDarkColor"
                     app:layout_constraintEnd_toStartOf="@+id/guideline3"
                     app:layout_constraintStart_toStartOf="@+id/guideline"
                     app:layout_constraintTop_toBottomOf="@+id/imageButton" />
@@ -162,7 +141,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/edit_password"
-                    android:textColor="@color/textDarkColor"
                     android:textSize="@dimen/title_three_text_size"
                     app:layout_constraintBottom_toBottomOf="@+id/button"
                     app:layout_constraintStart_toStartOf="@+id/guideline"
