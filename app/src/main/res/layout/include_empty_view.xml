@@ -7,15 +7,15 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:contentDescription="@string/no_more_data"
         app:layout_constraintBottom_toTopOf="@+id/tv_empty_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed"
-        app:srcCompat="@drawable/ic_markojs"
-        android:contentDescription="@string/no_more_data" />
+        app:srcCompat="@drawable/ic_markojs" />
 
     <TextView
         android:id="@+id/tv_empty_text"

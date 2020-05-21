@@ -15,8 +15,8 @@ public interface UrlDao {
     @Query("SELECT * FROM url")
     LiveData<List<Url>> getAllUrl();
 
-    @Query("SELECT * FROM URL WHERE id IN (:id)")
-    List<Url> getAUrl(String[] id);
+//    @Query("SELECT * FROM URL WHERE id IN (:id)")
+//    List<Url> getAUrl(String[] id);
 
     @Insert
     void addUrl(Url... url);

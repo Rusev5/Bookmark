@@ -31,7 +31,7 @@ public class MainViewModel extends ViewModel {
         repository.deleteWord(url);
     }
 
-    void deleteAllWord() {
-        repository.deleteAllWord();
-    }
+//    void deleteAllWord() {
+//        repository.deleteAllWord();
+//    }
 }
