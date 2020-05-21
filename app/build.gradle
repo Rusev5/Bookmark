@@ -23,6 +23,17 @@ android {
         }
     }
 
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            if (variant.buildType.name == 'debug') {
+                outputFileName = "bookmark.apk"
+            }
+            if (variant.buildType.name == 'release') {
+                outputFileName = "bookmark_${versionName}.apk"
+            }
+        }
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -46,7 +57,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation 'com.google.android.material:material:1.1.0'
 
     //Room
@@ -68,6 +79,7 @@ dependencies {
     implementation "com.github.irvingryan:verifycodeview:$verifycodeview_version"
 
     //BaseRecyclerViewAdapterHelper
+    //noinspection GradleDependency
     implementation "com.github.CymChad:BaseRecyclerViewAdapterHelper:$base_recycler_view_adapter_helper_version"
 
     //BasePopup
