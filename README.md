@@ -14,6 +14,8 @@
 ### 开发技术
 使用Google官方强推的 [Jetpack](https://developer.android.google.cn/jetpack "跳转至Jetpack官网") 组件库开发 (Room+LiveData+ViewModel)  
 采用MVVM开发模式 数据绑定均交由DataBinding + ViewBinding实现 (从而摆脱烦人的findViewById和过气的ButterKnife)
+### APK下载
+[bookmark_1.0.apk](https://github.com/Tyr74/Bookmark/blob/master/app/release/bookmark_1.0.apk)
 ## 声明
 本项目仅用于学习，交流。项目中的图标素材、图片资源均来自于网络，如有侵犯，请及时联系删除。
 ***
