@@ -43,4 +43,5 @@ ext {
     base_recycler_view_adapter_helper_version = '2.9.50'
     base_popup_version = '2.2.2.2'
     immersion_bar = '3.0.0'
+    gaussian_blur = '1.0.3'
 }

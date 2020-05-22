@@ -10,7 +10,7 @@
     <string name="name">名称</string>
     <string name="background">背景</string>
     <string name="url">链接</string>
-    <string name="no_more_data">暂无数据...</string>
+    <string name="no_more_data">暂无数据…</string>
     <string name="input_initial_password">请输入初始密码</string>
     <string name="input_new_password">请输入新密码</string>
     <string name="input_secondary_new_password">请二次输入新密码</string>
