@@ -1,5 +1,6 @@
 package com.lxf.bookmark.window;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -32,7 +33,7 @@ public class VerificationActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         ImmersionBar.with(this).init();
-        Bitmap blurredBitmap = GaussianBlur.with(this).render(R.drawable.bg);
+        @SuppressLint("WrongThread") Bitmap blurredBitmap = GaussianBlur.with(this).render(R.drawable.bg);
         binding.imgMain.setImageBitmap(blurredBitmap);
 
         initListener();

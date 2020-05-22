@@ -7,8 +7,8 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:contentDescription="@string/no_more_data"
         app:layout_constraintBottom_toTopOf="@+id/tv_empty_text"
         app:layout_constraintEnd_toEndOf="parent"
