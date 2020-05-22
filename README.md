@@ -10,6 +10,7 @@
 <nobr><img src="https://github.com/Tyr74/Bookmark/blob/master/img/img4.png" width="190" height="253" alt="设置操作界面"/> </nobr>
 
 ### 开发技术
-<p>使用Google官方强推的 Jetpack 组件库开发 (Room+LiveData+ViewModel)</p>
-<p>采用MVVM开发模式 数据绑定均交由DataBinding + ViewBinding实现 (从而摆脱烦人的findViewById和过气的ButterKnife)</p>
+使用Google官方强推的 [Jetpack](https://developer.android.google.cn/jetpack "跳转至Jetpack官网") 组件库开发 (Room+LiveData+ViewModel)
+
+采用MVVM开发模式 数据绑定均交由DataBinding + ViewBinding实现 (从而摆脱烦人的findViewById和过气的ButterKnife)
 
